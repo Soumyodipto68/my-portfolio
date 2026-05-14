@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import {VscGithub} from "react-icons/vsc";
+import { FaLinkedin } from "react-icons/fa";
 
 const links = [
   { name: "Home", id: "home" },
@@ -33,7 +35,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (!section) return;
 
@@ -50,7 +52,7 @@ const Navbar = () => {
         </h1>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-8 cursor-pointer">
           {links.map((link) => (
             <li key={link.id}>
               <button
@@ -68,6 +70,16 @@ const Navbar = () => {
               </button>
             </li>
           ))}
+          <li>
+            <a href="https://github.com/soumyodipto68" target="_blank" rel="noopener noreferrer" className="text-[#8b949e] hover:text-[#3fb950] transition">
+              <VscGithub size={24} />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/soumyodipto/" target="_blank" rel="noopener noreferrer" className="text-[#8b949e] hover:text-[#3fb950] transition">
+              <FaLinkedin size={24} />
+            </a>
+          </li>
         </ul>
 
         {/* Mobile Toggle */}
