@@ -1,7 +1,8 @@
 import {
   ArrowUpRight,
-  Github,
 } from "lucide-react";
+
+import { VscGithub } from "react-icons/vsc";
 
 interface ProjectCardProps {
   title: string;
@@ -33,7 +34,7 @@ const ProjectCard = ({
             target="_blank"
             className="text-[#8b949e] hover:text-white transition"
           >
-            <Github />
+            <VscGithub size={24} />
           </a>
 
           <a
