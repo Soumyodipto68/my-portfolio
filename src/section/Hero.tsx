@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { GrDocumentDownload } from "react-icons/gr";
 import { fadeUp } from "../utils/motion";
 
 const Hero = () => {
@@ -30,13 +31,19 @@ const Hero = () => {
           </p>
 
           <div className="flex gap-4">
-            <button className="bg-[#3fb950] text-black px-6 py-3 rounded-lg font-medium hover:opacity-90 cursor-pointer transition">
+            <a 
+            href="#projects"
+            className="bg-[#3fb950] text-black px-6 py-4 rounded-xl hover:border-[#3fb950] transition cursor-pointer inline-flex items-center justify-center">
               View Projects
-            </button>
-
-            <button className="border border-[#30363d] px-6 py-3 rounded-lg hover:border-[#3fb950] cursor-pointer transition">
+            </a>
+            <a
+              href="/src/assets/SOUMYODIPTO_PAL_RESUME.pdf"
+              download
+              className="border border-[#30363d] px-6 py-4 rounded-xl hover:border-[#3fb950] transition cursor-pointer inline-flex items-center justify-center"
+            >
+              <GrDocumentDownload size={20} className="mr-2" />
               Download Resume
-            </button>
+            </a>
           </div>
         </div>
 
