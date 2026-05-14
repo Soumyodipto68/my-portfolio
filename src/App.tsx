@@ -6,10 +6,13 @@ import Projects from "./section/Projects";
 import Contact from "./section/Contact";
 import Footer from "./components/Footer";
 import Journey from "./section/Journey";
+import BackgroundEffects from "./components/BackgroundEffects";
 function App() {
   return (
     <>
     <main className="bg-[#0d1117] text-[#e6edf3] min-h-screen">
+      <BackgroundEffects />
+      <div className="relative z-10">
       <Navbar />
       <Hero />
       <About />
@@ -18,6 +21,7 @@ function App() {
       <Journey/>
       <Contact />
       <Footer/>
+      </div>
     </main>
     </>
 

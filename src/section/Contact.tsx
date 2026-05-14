@@ -9,7 +9,7 @@ import SectionHeading from "../components/SectionHeading";
 
 const Contact = () => {
   return (
-    <section className="py-24 bg-[#161b22]">
+    <section id="contact" className="py-24">
       <Container>
         <SectionHeading title="Contact" />
 

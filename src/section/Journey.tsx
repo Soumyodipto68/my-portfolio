@@ -7,7 +7,7 @@ import { journey } from "../data/journey";
 
 const Journey = () => {
   return (
-    <section className="py-24 bg-[#161b22]">
+    <section id="journey" className="py-24">
       <Container>
         <SectionHeading title="Educational Journey" />
 

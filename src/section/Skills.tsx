@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 
 const Skills = () => {
   return (
-<motion.div
+  <section id="skills" className="py-24">
+  <motion.div
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
@@ -42,6 +43,8 @@ const Skills = () => {
         </div>
       </Container>
     </motion.div>
+    </section>
+
   );
 };
 

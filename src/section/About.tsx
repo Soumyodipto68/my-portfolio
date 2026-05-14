@@ -17,7 +17,7 @@ const About = () => {
   whileInView="visible"
   viewport={{ once: true }}
    >
-    <section className="py-24">
+    <section id="about" className="py-24">
       <Container>
         <SectionHeading title="About Me" />
 

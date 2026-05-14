@@ -6,11 +6,11 @@ import { projects } from "../data/projects";
 
 const Projects = () => {
   return (
-    <section className="py-24">
+    <section id="projects" className="py-24">
       <Container>
         <SectionHeading title="Featured Projects" />
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="flex flex-col gap-8">
           {projects.map((project) => (
             <ProjectCard
               key={project.title}
