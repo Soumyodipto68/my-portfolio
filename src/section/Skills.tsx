@@ -2,10 +2,18 @@ import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 
 import { skills } from "../data/skills";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   return (
-    <section className="py-24 bg-[#161b22]">
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  key={skills.title}
+  className="border border-[#30363d] rounded-2xl p-6 hover:border-[#3fb950] transition"
+>
       <Container>
         <SectionHeading title="Skills" />
 
@@ -33,7 +41,7 @@ const Skills = () => {
           ))}
         </div>
       </Container>
-    </section>
+    </motion.div>
   );
 };
 

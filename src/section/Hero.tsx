@@ -1,5 +1,13 @@
+import { motion } from "framer-motion";
+import { fadeUp } from "../utils/motion";
+
 const Hero = () => {
   return (
+    <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    animate="visible"
+    >
     <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
       
       {/* LEFT */}
@@ -22,11 +30,11 @@ const Hero = () => {
         </p>
 
         <div className="flex gap-4">
-          <button className="bg-[#3fb950] text-black px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">
+          <button className="bg-[#3fb950] text-black px-6 py-3 rounded-lg font-medium hover:opacity-90 cursor-pointer transition">
             View Projects
           </button>
 
-          <button className="border border-[#30363d] px-6 py-3 rounded-lg hover:border-[#3fb950] transition">
+          <button className="border border-[#30363d] px-6 py-3 rounded-lg hover:border-[#3fb950] cursor-pointer transition">
             Download Resume
           </button>
         </div>
@@ -61,6 +69,8 @@ const Hero = () => {
         </div>
       </div>
     </section>
+</motion.div>
+
   );
 };
 

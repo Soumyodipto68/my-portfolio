@@ -6,9 +6,17 @@ import {
 
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
+import { motion } from "framer-motion";
+import { fadeUp } from "../utils/motion";
 
 const About = () => {
   return (
+    <motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+   >
     <section className="py-24">
       <Container>
         <SectionHeading title="About Me" />
@@ -58,6 +66,8 @@ const About = () => {
         </div>
       </Container>
     </section>
+</motion.div>
+
   );
 };
 
