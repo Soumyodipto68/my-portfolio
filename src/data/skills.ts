@@ -1,11 +1,20 @@
 export const skills = [
+    {
+    title: "Programming Languages",
+    items: [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Java"
+    ],
+  },
   {
     title: "Frontend",
     items: [
       "React",
-      "TypeScript",
-      "JavaScript",
       "Tailwind CSS",
+      "Next.js",
+      "Material-UI",
       "HTML",
       "CSS",
     ],
@@ -25,18 +34,39 @@ export const skills = [
     title: "Database",
     items: [
       "MongoDB",
-      "Mongoose",
-      "Firebase",
+      "PostgreSQL",
+      "MySQL",
     ],
   },
 
   {
-    title: "Tools",
+    title: "API & Testing Tools",
+    items: [
+      "Postman",
+      "Axios",
+    ],
+  },
+
+  {
+    title: "Version Control",
     items: [
       "Git",
       "GitHub",
-      "Postman",
-      "VS Code",
     ],
   },
+  {
+    title: "Deployment",
+    items: [
+      "Vercel",
+      "Render",
+      "Docker",
+    ],
+  },
+  {
+    title: "Other Tools",
+    items: [
+      "Figma",
+      "VS Code",
+    ],
+  }
 ];
