@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import {VscGithub} from "react-icons/vsc";
 import { FaLinkedin } from "react-icons/fa";
+import { a } from "framer-motion/client";
 
 const links = [
   { name: "Home", id: "home" },
@@ -47,7 +48,9 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-gradient-to-r from-[#0d1117]/80 to-[#161b22]/80 border-b border-[#30363d] shadow-lg">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-[#3fb950] hover:text-[#58a6ff] transition">
+        <h1 
+         onClick={() => scrollToSection('home')}
+         className="text-2xl font-bold cursor-pointer text-[#3fb950] hover:text-[#58a6ff] transition">
           {"</>"} Soumyodipto
         </h1>
 
