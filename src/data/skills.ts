@@ -17,6 +17,7 @@ export const skills = [
       "Material-UI",
       "HTML",
       "CSS",
+      "Framer Motion"
     ],
   },
 
@@ -25,8 +26,10 @@ export const skills = [
     items: [
       "Node.js",
       "Express.js",
-      "REST APIs",
-      "JWT Auth",
+      "REST APIs Development",
+      "JWT Authentication",
+      "OAuth2.0",
+      "WebSocket",
     ],
   },
 
@@ -36,6 +39,8 @@ export const skills = [
       "MongoDB",
       "PostgreSQL",
       "MySQL",
+      "Redis",
+      "Supabase"
     ],
   },
 
