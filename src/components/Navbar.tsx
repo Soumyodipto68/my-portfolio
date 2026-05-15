@@ -8,7 +8,7 @@ const links = [
   { name: "About", id: "about" },
   { name: "Skills", id: "skills" },
   { name: "Projects", id: "projects" },
-  { name: "Journey", id: "journey" },
+  { name: "Education", id: "journey" },
   { name: "Contact", id: "contact" },
 ];
 
@@ -52,12 +52,12 @@ const Navbar = () => {
         </h1>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 cursor-pointer">
+        <ul className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <li key={link.id}>
               <button
                 onClick={() => scrollToSection(link.id)}
-                className={`relative text-sm font-medium transition duration-300 ${
+                className={`relative cursor-pointer text-sm font-medium transition duration-300 ${
                   active === link.id ? "text-white" : "text-[#8b949e]"
                 } hover:text-[#3fb950]`}
               >

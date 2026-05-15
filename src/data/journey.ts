@@ -1,45 +1,45 @@
 export const journey = [
   {
-    year: "2024 - Present",
+    year: "2023 - Present",
 
-    title: "Bachelor of Computer Applications",
+    title: "Bachelor of Computer Applications (BCA)",
 
-    place: "BCA Degree",
+    place: "Techno India University, WB",
 
-    description:
-      "Focused on web development, programming fundamentals, databases, and modern full-stack technologies.",
+    description: `Focused on programming fundamentals,data structures, databases, and modern full-stack technologies.
+                  Maintained 9+ CGPA through the academic carrear`,
   },
 
   {
-    year: "2025",
+    year: "2021-2023",
 
-    title: "Frontend Development Journey",
+    title: "Higher Secondary Education",
 
-    place: "Self Learning",
+    place: "Dum Dum Krishna Kumar Hindu Academy, WBCHSE",
 
-    description:
-      "Learned HTML, CSS, JavaScript, Tailwind CSS, React, and responsive UI development through real-world projects.",
+    description: `Devloped a strong foundation of core science subjects, Specially in Mathematics and Logical Thinking
+                  Scores 70% in State Boards Exam`,
   },
 
-  {
-    year: "2025 - Present",
+  // {
+  //   year: "2025 - Present",
 
-    title: "MERN Stack Development",
+  //   title: "MERN Stack Development",
 
-    place: "Projects & Practice",
+  //   place: "Projects & Practice",
 
-    description:
-      "Building scalable applications using React, Node.js, Express, MongoDB, authentication systems, and REST APIs.",
-  },
+  //   description:
+  //     "Building scalable applications using React, Node.js, Express, MongoDB, authentication systems, and REST APIs.",
+  // },
 
-  {
-    year: "Current Goal",
+  // {
+  //   year: "Current Goal",
 
-    title: "Full Stack & Problem Solving",
+  //   title: "Full Stack & Problem Solving",
 
-    place: "Continuous Learning",
+  //   place: "Continuous Learning",
 
-    description:
-      "Improving backend architecture, TypeScript, databases, deployment, and software engineering practices.",
-  },
+  //   description:
+  //     "Improving backend architecture, TypeScript, databases, deployment, and software engineering practices.",
+  // },
 ];
