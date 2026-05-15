@@ -7,45 +7,51 @@ export const projects = [
 
     tech: [
       "React",
-      "TypeScript",
+      "JavaScript",
       "Tailwind",
       "Node.js",
+      "Express JS",
       "MongoDB",
     ],
 
-    github: "#",
+    github: "",
 
     live: "#",
   },
 
   {
-    title: "Authentication System",
+    title: "Chat Application",
 
     description:
-      "Modern authentication application with login, registration, protected routes, and JWT authentication.",
+      "Modern authentication chat application with login, registration, protected routes, and JWT authentication with real-time  chating and media features",
 
     tech: [
       "React",
-      "Express",
+      "Express JS",
+      "Node JS",
       "MongoDB",
       "JWT",
+      "socket-io"
     ],
 
-    github: "#",
+    github: "",
 
     live: "#",
   },
 
   {
-    title: "Weather Dashboard",
+    title: "WeareHouse Management System",
 
     description:
-      "Responsive weather application with live API integration and modern UI design.",
+      "Build a Complete Full Stack WeareHouse Management System with role based authentication controll and responible UI",
 
     tech: [
       "React",
-      "Tailwind",
-      "API",
+      "Node js",
+      "Express js",
+      "JWT authentication",
+      "Postgre SQL",
+      
     ],
 
     github: "#",
