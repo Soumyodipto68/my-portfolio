@@ -19,6 +19,7 @@ const Projects = () => {
               tech={project.tech}
               github={project.github}
               live={project.live}
+              image={project.image}
             />
           ))}
         </div>

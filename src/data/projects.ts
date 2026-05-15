@@ -1,4 +1,3 @@
-import { image } from "framer-motion/client";
 
 export const projects = [
   {
@@ -18,7 +17,7 @@ export const projects = [
 
     github: "",
     live: "#",
-    image: ''
+    image: '/projects/localservice.png'
   },
 
   {
@@ -37,7 +36,7 @@ export const projects = [
     ],
     github: "",
     live: "#",
-    image: ''
+    image: '/projects/chatapplication.png'
   },
 
   {
@@ -56,6 +55,6 @@ export const projects = [
     ],
     github: "#",
     live: "#",
-    image: ''
+    image: '/projects/warehouse.png'
   },
 ];

@@ -59,7 +59,7 @@ const About = () => {
               <Mail className="text-[#3fb950]" />
 
               <span>
-                <a href="" className="cursor-pointer" target="_blank">soumyodiptopal77@gmail.com</a>
+                <a href="mailto:soumyodiptopal77@gmail.com" className="cursor-pointer" target="_blank">soumyodiptopal77@gmail.com</a>
                 
               </span>
             </div>

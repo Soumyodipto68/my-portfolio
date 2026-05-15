@@ -28,7 +28,7 @@ const Contact = () => {
           <div className="flex flex-wrap gap-6">
             
             <a
-              href="mailto:soumyodipto123@gmail.com"
+              href="mailto:soumyodiptopal77@gmail.com"
               className="flex items-center gap-3 border border-[#30363d] px-6 py-4 rounded-xl hover:border-[#3fb950] transition"
             >
               <Mail size={20} />
@@ -37,7 +37,8 @@ const Contact = () => {
             </a>
 
             <a
-              href="#"
+              href="https://github.com/soumyodipto68"
+              target="_blank"
               className="flex items-center gap-3 border border-[#30363d] px-6 py-4 rounded-xl hover:border-[#3fb950] transition"
             >
               <VscGithub size={20} />
@@ -46,7 +47,8 @@ const Contact = () => {
             </a>
 
             <a
-              href="#"
+              href="https://www.linkedin.com/in/soumyodipto-pal-421a2331b/"
+              target="_blank"
               className="flex items-center gap-3 border border-[#30363d] px-6 py-4 rounded-xl hover:border-[#3fb950] transition"
             >
               <FaLinkedin size={20} />

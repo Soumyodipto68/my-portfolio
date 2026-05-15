@@ -33,20 +33,18 @@ const ProjectCard = ({
       "
     >
       <div className="grid lg:grid-cols-2">
-        {/* LEFT IMAGE */}
-        <div className="relative group overflow-hidden border-r border-[#30363d]">
-          <img
-            src={image}
-            alt={title}
-            className="
-              w-full h-full object-cover
-              transition-transform duration-500
-              group-hover:scale-110
-            "
-          />
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117] to-transparent opacity-50" />
-        </div>
+    {/* LEFT IMAGE */}
+    <div className="relative overflow-hidden border-r border-[#30363d] bg-[#0d1117] flex items-center justify-center">
+    <div className="w-full aspect-video">
+    <img
+      src={image}
+      alt={title}
+      className=" w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"/>
+    </div>
+
+    {/* OVERLAY */}
+  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117]/40 to-transparent pointer-events-none"/>
+  </div>
 
         {/* RIGHT CONTENT */}
         <div className="p-10 flex flex-col justify-center">
