@@ -1,3 +1,5 @@
+import { image } from "framer-motion/client";
+
 export const projects = [
   {
     title: "Local Service Provider Platform",
@@ -15,8 +17,8 @@ export const projects = [
     ],
 
     github: "",
-
     live: "#",
+    image: ''
   },
 
   {
@@ -33,10 +35,9 @@ export const projects = [
       "JWT",
       "socket-io"
     ],
-
     github: "",
-
     live: "#",
+    image: ''
   },
 
   {
@@ -53,9 +54,8 @@ export const projects = [
       "Postgre SQL",
       
     ],
-
     github: "#",
-
     live: "#",
+    image: ''
   },
 ];

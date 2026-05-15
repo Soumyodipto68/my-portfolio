@@ -6,7 +6,7 @@ html {
 body {
   background: #0d1117;
   color: #e6edf3;
-  font-family: "jetbrains", sans-serif;
+  font-family: 'Source Code Pro', monospace;
    scroll-behavior: smooth;
 }
 
