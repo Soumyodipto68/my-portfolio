@@ -68,10 +68,10 @@ const Hero = () => {
             <p>Full Stack Developer</p>
 
             <p>
-              <span className="text-[#3fb950]">$ stack</span>
+              <span className="text-[#3fb950]">$ location</span>
             </p>
 
-            <p>MERN Stack</p>
+            <p>kolkata</p>
           </div>
         </div>
       </section>
