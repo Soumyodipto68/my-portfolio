@@ -26,8 +26,7 @@ const Hero = () => {
           </h2>
 
           <p className="text-[#8b949e] text-lg leading-8 max-w-xl mb-10">
-            I build scalable and modern web applications
-            using React, Node.js, Express, and MongoDB.
+           I build scalable, high-performance web applications with modern technologies, focusing on clean architecture, responsive design, seamless user experiences, optimized performance, and efficient development practices to create impactful digital solutions.
           </p>
 
           <div className="flex gap-4">
