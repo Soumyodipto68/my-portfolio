@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { VscGithub } from "react-icons/vsc";
 import { FaLinkedin } from "react-icons/fa";
+import { CiBrightnessUp } from "react-icons/ci";
+
 
 const links = [
   { name: "Home", id: "home" },
@@ -15,6 +17,7 @@ const links = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const [themeOpen, setThemeOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +54,7 @@ const Navbar = () => {
           onClick={() => scrollToSection("home")}
           className="text-xl sm:text-2xl font-bold cursor-pointer text-[#3fb950] hover:text-[#58a6ff] transition"
         >
-          {"</>"} Soumyodipto
+          {"<Soumyodipto/>"} 
         </h1>
 
         {/* Desktop Menu */}
@@ -95,6 +98,18 @@ const Navbar = () => {
               <FaLinkedin size={24} />
             </a>
           </li>
+         <li className="relative">
+        <button onClick={() =>setThemeOpen(!themeOpen)}
+               className="  text-[#8b949e] hover:text-[#3fb950] transition p-1 cursor-pointer">
+               <CiBrightnessUp size={24} />
+              </button>
+        {themeOpen && (
+    <div
+      className="absolute top-12 right-0 w-44 rounded-2xl border border-[#30363d bg-[#161b22]/95 backdrop-blur-xl  shadow-2xl p-2  z-50 ">
+      💡Lights attracts bugs, Good Developer only works in dark mode
+      </div>
+      )}      
+        </li>
         </ul>
 
         {/* Mobile Toggle */}
