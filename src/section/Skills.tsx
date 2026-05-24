@@ -12,7 +12,6 @@ const Skills = () => {
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
   transition={{ duration: 0.5 }}
-  key={skills.title}
   className="border border-[#30363d] rounded-2xl p-6 hover:border-[#3fb950] transition"
 >
       <Container>
