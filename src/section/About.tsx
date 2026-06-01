@@ -7,7 +7,7 @@ import {
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 import { motion } from "framer-motion";
-import { slideLeft, slideRight, staggerContainer, staggerItem } from "../utils/motion";
+import { staggerContainer } from "../utils/motion";
 
 const About = () => {
   return (
@@ -25,10 +25,18 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           
           {/* LEFT */}
-          <motion.div variants={slideLeft}>
+          <motion.div 
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
             <motion.p 
               className="text-[#8b949e] text-lg leading-9"
-              variants={staggerItem}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 }}
             >
               I'm a BCA student passionate about
               full stack development and modern web
@@ -47,7 +55,10 @@ const About = () => {
           {/* RIGHT */}
           <motion.div 
             className="space-y-6"
-            variants={slideRight}
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
             
             <motion.div 

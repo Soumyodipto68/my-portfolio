@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { GrDocumentDownload } from "react-icons/gr";
-import { slideLeft, slideRight, staggerContainer, staggerItem } from "../utils/motion";
+import { staggerContainer, staggerItem } from "../utils/motion";
 
 const Hero = () => {
   return (
@@ -15,23 +15,53 @@ const Hero = () => {
 
         {/* LEFT */}
         <motion.div variants={staggerItem}>
-          <motion.p variants={slideLeft} className="text-[#3fb950] text-xl mb-4">
+          <motion.p 
+            className="text-[#3fb950] text-xl mb-4"
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
             Hi, I'm
           </motion.p>
 
-          <motion.h1 variants={slideLeft} className="text-6xl font-bold leading-tight mb-6">
+          <motion.h1 
+            className="text-6xl font-bold leading-tight mb-6"
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
             Soumyodipto Pal
           </motion.h1>
 
-          <motion.h2 variants={slideLeft} className="text-3xl text-[#3fb950] font-semibold mb-6">
+          <motion.h2 
+            className="text-3xl text-[#3fb950] font-semibold mb-6"
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             Full Stack Developer
           </motion.h2>
 
-          <motion.p variants={slideLeft} className="text-[#8b949e] text-lg leading-8 max-w-xl mb-10">
+          <motion.p 
+            className="text-[#8b949e] text-lg leading-8 max-w-xl mb-10"
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
            I build scalable, high-performance web applications with modern technologies, focusing on clean architecture, responsive design, seamless user experiences, optimized performance, and efficient development practices to create impactful digital solutions.
           </motion.p>
 
-          <motion.div variants={slideLeft} className="flex gap-4">
+          <motion.div 
+            className="flex gap-4"
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
             <motion.a 
             href="#projects"
             whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(63, 185, 80, 0.3)" }}
@@ -54,7 +84,10 @@ const Hero = () => {
 
         {/* RIGHT */}
         <motion.div 
-          variants={slideRight}
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
           className="border border-[#30363d] rounded-2xl p-8 bg-[#161b22]"
           whileHover={{ 
             boxShadow: "0 0 30px rgba(32, 178, 166, 0.2)",
