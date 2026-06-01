@@ -3,9 +3,11 @@ import {
 } from "lucide-react";
 import { VscGithub } from "react-icons/vsc";
 import { FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
+import { staggerContainer, staggerItem } from "../utils/motion";
 
 const Contact = () => {
   return (
@@ -13,50 +15,89 @@ const Contact = () => {
       <Container>
         <SectionHeading title="Contact" />
 
-        <div className="max-w-3xl">
+        <motion.div 
+          className="max-w-3xl"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           
-          <h3 className="text-4xl font-bold mb-6">
+          <motion.h3 
+            variants={staggerItem}
+            className="text-4xl font-bold mb-6"
+          >
             Let's Build Something Great
-          </h3>
+          </motion.h3>
 
-          <p className="text-[#8b949e] text-lg leading-8 mb-10">
+          <motion.p 
+            variants={staggerItem}
+            className="text-[#8b949e] text-lg leading-8 mb-10"
+          >
             I'm always interested in learning,
             collaborating, and building impactful
             projects.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap gap-6">
+          <motion.div 
+            className="flex flex-wrap gap-6"
+            variants={staggerContainer}
+          >
             
-            <a
+            <motion.a
               href="mailto:soumyodiptopal77@gmail.com"
-              className="flex items-center gap-3 border border-[#30363d] px-6 py-4 rounded-xl hover:border-[#3fb950] transition"
+              variants={staggerItem}
+              whileHover={{ 
+                scale: 1.05,
+                backgroundColor: "rgba(63, 185, 80, 0.1)",
+                borderColor: "#3fb950",
+                boxShadow: "0 0 20px rgba(63, 185, 80, 0.2)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-3 border border-[#30363d] px-6 py-4 rounded-xl transition"
             >
               <Mail size={20} />
 
               Email
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
               href="https://github.com/soumyodipto68"
               target="_blank"
-              className="flex items-center gap-3 border border-[#30363d] px-6 py-4 rounded-xl hover:border-[#3fb950] transition"
+              variants={staggerItem}
+              whileHover={{ 
+                scale: 1.05,
+                backgroundColor: "rgba(63, 185, 80, 0.1)",
+                borderColor: "#3fb950",
+                boxShadow: "0 0 20px rgba(63, 185, 80, 0.2)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-3 border border-[#30363d] px-6 py-4 rounded-xl transition"
             >
               <VscGithub size={20} />
 
               GitHub
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
               href="https://www.linkedin.com/in/soumyodipto-pal-421a2331b/"
               target="_blank"
-              className="flex items-center gap-3 border border-[#30363d] px-6 py-4 rounded-xl hover:border-[#3fb950] transition"
+              variants={staggerItem}
+              whileHover={{ 
+                scale: 1.05,
+                backgroundColor: "rgba(63, 185, 80, 0.1)",
+                borderColor: "#3fb950",
+                boxShadow: "0 0 20px rgba(63, 185, 80, 0.2)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-3 border border-[#30363d] px-6 py-4 rounded-xl transition"
             >
               <FaLinkedin size={20} />
 
               LinkedIn
-            </a>
-          </div>
-        </div>
+            </motion.a>
+          </motion.div>
+        </motion.div>
       </Container>
     </section>
   );

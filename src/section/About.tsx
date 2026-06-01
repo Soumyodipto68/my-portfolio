@@ -7,25 +7,29 @@ import {
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 import { motion } from "framer-motion";
-import { fadeUp } from "../utils/motion";
+import { slideLeft, slideRight, staggerContainer, staggerItem } from "../utils/motion";
 
 const About = () => {
   return (
-    <motion.div
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-   >
-    <section id="about" className="py-24">
+    <motion.section
+      id="about"
+      className="py-24"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <Container>
         <SectionHeading title="About Me" />
 
         <div className="grid lg:grid-cols-2 gap-16">
           
           {/* LEFT */}
-          <div>
-            <p className="text-[#8b949e] text-lg leading-9">
+          <motion.div variants={slideLeft}>
+            <motion.p 
+              className="text-[#8b949e] text-lg leading-9"
+              variants={staggerItem}
+            >
               I'm a BCA student passionate about
               full stack development and modern web
               technologies.
@@ -37,38 +41,67 @@ const About = () => {
               solving problems, and continuously
               improving my development skills through
               real-world projects.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* RIGHT */}
-          <div className="space-y-6">
+          <motion.div 
+            className="space-y-6"
+            variants={slideRight}
+          >
             
-            <div className="flex items-center gap-4">
-              <GraduationCap className="text-[#3fb950]" />
+            <motion.div 
+              className="flex items-center gap-4"
+              whileHover={{ x: 10, transition: { duration: 0.3 } }}
+            >
+              <motion.div
+                whileHover={{ rotate: 10, scale: 1.2 }}
+              >
+                <GraduationCap className="text-[#3fb950]" />
+              </motion.div>
 
               <span>BCA Student</span>
-            </div>
+            </motion.div>
 
-            <div className="flex items-center gap-4">
-              <MapPin className="text-[#3fb950]" />
+            <motion.div 
+              className="flex items-center gap-4"
+              whileHover={{ x: 10, transition: { duration: 0.3 } }}
+            >
+              <motion.div
+                whileHover={{ rotate: -10, scale: 1.2 }}
+              >
+                <MapPin className="text-[#3fb950]" />
+              </motion.div>
 
               <span>Kolkata, West Bengal</span>
-            </div>
+            </motion.div>
 
-            <div className="flex items-center gap-4">
-              <Mail className="text-[#3fb950]" />
+            <motion.div 
+              className="flex items-center gap-4"
+              whileHover={{ x: 10, transition: { duration: 0.3 } }}
+            >
+              <motion.div
+                whileHover={{ rotate: 5, scale: 1.2 }}
+              >
+                <Mail className="text-[#3fb950]" />
+              </motion.div>
 
               <span>
-                <a href="mailto:soumyodiptopal77@gmail.com" className="cursor-pointer" target="_blank">soumyodiptopal77@gmail.com</a>
+                <motion.a 
+                  href="mailto:soumyodiptopal77@gmail.com" 
+                  className="cursor-pointer" 
+                  target="_blank"
+                  whileHover={{ textDecoration: "underline", color: "#3fb950" }}
+                >
+                  soumyodiptopal77@gmail.com
+                </motion.a>
                 
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </Container>
-    </section>
-</motion.div>
-
+    </motion.section>
   );
 };
 
