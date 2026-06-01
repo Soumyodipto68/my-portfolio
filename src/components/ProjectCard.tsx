@@ -1,7 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { VscGithub } from "react-icons/vsc";
 import { motion } from "framer-motion";
-import { float, hoverScale } from "../utils/motion";
 
 interface ProjectCardProps {
   title: string;
