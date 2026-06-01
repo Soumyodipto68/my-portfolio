@@ -36,7 +36,7 @@ const Hero = () => {
               View Projects
             </a>
             <a
-              href="/src/assets/SOUMYODIPTO_PAL_RESUME.pdf"
+              href="/SOUMYODIPTO_PAL_RESUME.pdf"
               download
               className="border border-[#30363d] px-6 py-4 rounded-xl hover:border-[#3fb950] transition cursor-pointer inline-flex items-center justify-center"
             >
