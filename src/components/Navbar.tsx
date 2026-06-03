@@ -158,88 +158,129 @@ const Navbar = () => {
         </motion.button>
       </nav>
 
-      {/* Mobile Sidebar */}
-      <AnimatePresence>
-        {open && (
-          <>
-            {/* Overlay */}
-            <motion.div
-              onClick={() => setOpen(false)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
-            />
+     {/* Mobile Sidebar */}
+  <AnimatePresence>
+    {open && (
+    <>
+      {/* Overlay */}
+      <motion.div
+        onClick={() => setOpen(false)}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+      />
 
-            {/* Sidebar */}
-            <motion.div 
-              initial={{ x: 280 }}
-              animate={{ x: 0 }}
-              exit={{ x: 280 }}
-              transition={{ type: "spring", bounce: 0.3 }}
-              className="md:hidden fixed top-0 right-0 h-full w-[280px] bg-[#0b62055b] backdrop-blur-xl border-l border-[#30363d] z-50 flex flex-col"
+      {/* Sidebar */}
+      <motion.div
+        initial={{ x: "100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "100%" }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 30,
+        }}
+        className="md:hidden fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-[#161b22]/95 backdrop-blur-2xl
+        border-l border-[#30363d]
+        shadow-2xl z-50 flex flex-col"
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 py-5 border-b border-[#30363d]">
+          <div>
+            <h2 className="text-lg font-bold text-[#3fb950]">
+              Soumyodipto
+            </h2>
+            <p className="text-xs text-[#8b949e]">
+              Full Stack Developer
+            </p>
+          </div>
+
+          <motion.button
+            onClick={() => setOpen(false)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="text-[#8b949e] hover:text-white"
+          >
+            <X size={24} />
+          </motion.button>
+        </div>
+
+        {/* Links */}
+        <ul className="p-4 flex-grow space-y-2">
+          {links.map((link, index) => (
+            <motion.li
+              key={link.id}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.08 }}
             >
-              {/* Close Button */}
-              <div className="flex justify-end p-4">
-                <motion.button
-                  onClick={() => setOpen(false)}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="text-white hover:text-[#3fb950] transition"
-                >
-                  <X size={28} />
-                </motion.button>
-              </div>
+              <motion.button
+                onClick={() => scrollToSection(link.id)}
+                whileTap={{ scale: 0.97 }}
+                className={`w-full flex items-center justify-between
+                px-4 py-3 rounded-xl transition-all duration-300
+                ${
+                  active === link.id
+                    ? "bg-[#3fb950]/10 text-[#3fb950]"
+                    : "text-[#8b949e] hover:bg-[#21262d] hover:text-white"
+                }`}
+              >
+                <span>{link.name}</span>
 
-              {/* Links */}
-              <ul className="flex flex-col p-6 gap-6 flex-grow bg-[#0e5009dc]">
-                {links.map((link, index) => (
-                  <motion.li 
-                    key={link.id}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <motion.button
-                      onClick={() => scrollToSection(link.id)}
-                      whileHover={{ x: 10 }}
-                      className={`text-left text-lg transition hover:text-[#3fb950] ${
-                        active === link.id ? "text-white" : "text-[#8b949e]"
-                      }`}
-                    >
-                      {link.name}
-                    </motion.button>
-                  </motion.li>
-                ))}
-              </ul>
+                {active === link.id && (
+                  <div className="w-2 h-2 rounded-full bg-[#3fb950]" />
+                )}
+              </motion.button>
+            </motion.li>
+          ))}
+        </ul>
 
-              {/* Socials */}
-              <div className="flex items-center gap-5 p-6 border-t border-[#30363d] bg-[#0b6205e4]">
-                <motion.a
-                  href="https://github.com/soumyodipto68"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="text-[#8b949e] hover:text-[#3fb950] transition"
-                >
-                  <VscGithub size={24} />
-                </motion.a>
-                <motion.a
-                  href="https://www.linkedin.com/in/soumyodipto/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="text-[#8b949e] hover:text-[#3fb950] transition"
-                >
-                  <FaLinkedin size={24} />
-                </motion.a>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+        {/* Developer Quote */}
+        <div className="px-4 pb-4">
+          <div className="p-4 rounded-xl bg-[#21262d] border border-[#30363d]">
+            <p className="text-xs text-[#8b949e] leading-5">
+              💡 Lights attract bugs.
+              <br />
+              Good developers work in dark mode.
+            </p>
+          </div>
+        </div>
+
+        {/* Socials */}
+        <div className="border-t border-[#30363d] p-5">
+          <p className="text-sm text-[#8b949e] mb-4">
+            Connect with me
+          </p>
+
+          <div className="flex gap-5">
+            <motion.a
+              href="https://github.com/soumyodipto68"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.9 }}
+              className="text-[#8b949e] hover:text-[#3fb950] transition"
+            >
+              <VscGithub size={24} />
+            </motion.a>
+
+            <motion.a
+              href="https://www.linkedin.com/in/soumyodipto/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.9 }}
+              className="text-[#8b949e] hover:text-[#3fb950] transition"
+            >
+              <FaLinkedin size={24} />
+            </motion.a>
+          </div>
+        </div>
+      </motion.div>
+    </>
+  )}
+</AnimatePresence>
     </header>
   );
 };
