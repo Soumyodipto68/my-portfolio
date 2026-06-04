@@ -71,7 +71,7 @@ export const skills = [
     title: "Other Tools",
     items: [
       "Figma",
-      "VS Code",
+      "Notion",
     ],
   }
 ];
