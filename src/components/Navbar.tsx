@@ -202,7 +202,7 @@ const Navbar = () => {
           stiffness: 300,
           damping: 30,
         }}
-        ref={(el) => (sidebarRef.current = el)}
+        ref={(el) => { sidebarRef.current = el; }}
         className="md:hidden fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-[#161b22]/95 backdrop-blur-md
         border-l border-[#30363d]
         shadow-2xl z-50 flex flex-col"
