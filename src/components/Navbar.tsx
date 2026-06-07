@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { VscGithub } from "react-icons/vsc";
 import { FaLinkedin } from "react-icons/fa";
@@ -18,6 +18,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [themeOpen, setThemeOpen] = useState(false);
+  const sidebarRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +38,25 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (!open) return;
+      const target = e.target as Node;
+      if (!sidebarRef.current) return;
+      if (!sidebarRef.current.contains(target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [open]);
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
@@ -139,6 +159,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -10, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.9 }}
+              transition={{ duration: 0.2 }}
               className="absolute top-12 right-0 w-44 rounded-2xl border border-[#30363d] bg-[#161b22]/95 backdrop-blur-xl shadow-2xl p-2 z-50">
               💡 Lights attract bugs, Good Developer only works in dark mode
             </motion.div>
@@ -181,7 +202,8 @@ const Navbar = () => {
           stiffness: 300,
           damping: 30,
         }}
-        className="md:hidden fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-[#161b22]/95 backdrop-blur-2xl
+        ref={(el) => (sidebarRef.current = el)}
+        className="md:hidden fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-[#161b22]/95 backdrop-blur-md
         border-l border-[#30363d]
         shadow-2xl z-50 flex flex-col"
       >
@@ -207,7 +229,9 @@ const Navbar = () => {
         </div>
 
         {/* Links */}
-        <ul className="p-4 flex-grow space-y-2">
+        <ul className="p-4 flex-grow space-y-2  bg-[#161b22]/95 backdrop-blur-md
+        border-l border-[#30363d]
+        shadow-2xl rounded-xl">
           {links.map((link, index) => (
             <motion.li
               key={link.id}
@@ -237,7 +261,9 @@ const Navbar = () => {
         </ul>
 
         {/* Developer Quote */}
-        <div className="px-4 pb-4">
+        <div className="px-4 pb-4  bg-[#161b22]/95 backdrop-blur-md
+        border-l border-[#30363d]
+        shadow-2xl rounded-xl">
           <div className="p-4 rounded-xl bg-[#21262d] border border-[#30363d]">
             <p className="text-xs text-[#8b949e] leading-5">
               💡 Lights attract bugs.
@@ -248,7 +274,9 @@ const Navbar = () => {
         </div>
 
         {/* Socials */}
-        <div className="border-t border-[#30363d] p-5">
+        <div className="border-t border-[#30363d] p-5  bg-[#161b22]/95 backdrop-blur-md
+        border-l border-[#30363d]
+        shadow-2xl rounded-xl">
           <p className="text-sm text-[#8b949e] mb-4">
             Connect with me
           </p>
