@@ -1,51 +1,15 @@
 const BackgroundEffects = () => {
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-      
-      {/* TOP LEFT GLOW */}
-      <div className="absolute top-[-150px] left-[-120px] w-[500px] h-[500px] bg-[#3fb950]/20 rounded-full blur-[140px]" />
-
-      {/* BOTTOM RIGHT GLOW */}
-      <div className="absolute bottom-[-200px] right-[-150px] w-[500px] h-[500px] bg-emerald-400/10 rounded-full blur-[140px]" />
-
-      {/* CENTER GLOW */}
-      <div className="absolute top-[40%] left-[40%] w-[350px] h-[350px] bg-[#3fb950]/10 rounded-full blur-[120px]" />
-
-      {/* HEXAGON */}
-      <div
-        className="absolute top-32 right-32 w-40 h-40 border border-[#3fb950]/20"
-        style={{
-          clipPath:
-            "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)",
-        }}
-      />
-
-      {/* OCTAGON */}
-      <div
-        className="absolute bottom-40 left-20 w-52 h-52 border border-[#3fb950]/10 rotate-12"
-        style={{
-          clipPath:
-            "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
-        }}
-      />
-
-      {/* PENTAGON */}
-      <div
-        className="absolute top-[60%] right-[20%] w-32 h-32 border border-[#3fb950]/20"
-        style={{
-          clipPath:
-            "polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)",
-        }}
-      />
-
-      {/* SMALL HEX */}
-      <div
-        className="absolute top-[20%] left-[20%] w-24 h-24 border border-[#3fb950]/10 rotate-45"
-        style={{
-          clipPath:
-            "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)",
-        }}
-      />
+    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div className="ambient-glow absolute -left-24 -top-24 h-136 w-136 rounded-full bg-[radial-gradient(circle,rgba(91,33,182,0.2),transparent_68%)] blur-3xl" />
+      <div className="ambient-glow absolute -bottom-48 -right-40 h-120 w-120 rounded-full bg-[radial-gradient(circle,rgba(30,64,175,0.12),transparent_68%)] blur-3xl" style={{ animationDelay: "-7s" }} />
+      <div className="ambient-scanline absolute left-0 top-1/3 h-px w-1/3 bg-linear-to-r from-transparent via-violet-400/25 to-transparent" />
+      <span className="floating-dot floating-dot--violet left-[12%] top-[22%]" />
+      <span className="floating-dot floating-dot--blue left-[38%] top-[16%]" style={{ animationDelay: "-2s" }} />
+      <span className="floating-dot floating-dot--violet right-[18%] top-[28%]" style={{ animationDelay: "-4s" }} />
+      <span className="floating-dot floating-dot--blue right-[31%] top-[64%]" style={{ animationDelay: "-1s" }} />
+      <span className="floating-dot floating-dot--violet bottom-[18%] left-[22%]" style={{ animationDelay: "-5s" }} />
+      <span className="floating-dot floating-dot--blue bottom-[12%] right-[12%]" style={{ animationDelay: "-3s" }} />
     </div>
   );
 };

@@ -9,28 +9,25 @@ const SectionHeading = ({
 }: SectionHeadingProps) => {
   return (
     <motion.div 
-      className="flex items-center gap-4 mb-12"
+      className="mb-10 flex items-end justify-between gap-6"
       initial={{ opacity: 0, y: -20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <motion.span 
-        className="text-[#3fb950] font-mono text-xl"
-        whileHover={{ scale: 1.2, rotate: 10 }}
-      >
-        //
-      </motion.span>
-
-      <motion.h2 
-        className="text-3xl font-bold"
-        whileHover={{ color: "#3fb950" }}
-      >
-        {title}
-      </motion.h2>
-
+      <div>
+        <p className="mb-2 font-mono text-xs uppercase tracking-[0.24em] text-[#8b949e]">
+          / workspace
+        </p>
+        <motion.h2 
+          className="text-3xl font-bold tracking-tight sm:text-4xl"
+          whileHover={{ color: "#3fb950" }}
+        >
+          {title}
+        </motion.h2>
+      </div>
       <motion.div 
-        className="flex-1 h-px bg-[#30363d]"
+        className="mb-2 h-px flex-1 bg-gradient-to-r from-[#3fb950]/60 to-transparent"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}

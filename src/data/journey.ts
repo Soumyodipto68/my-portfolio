@@ -1,5 +1,13 @@
 export const journey = [
+  // {
+  //   type: "experience",
+  //   year: "Jul 2024 - Aug 2024",
+  //   title: "Full Stack Developer Intern",
+  //   place: "Massive Impact (Kolkata)",
+  //   description: "Worked on building websites, optimizing SEO and collaborating with the team to deliver solutions.",
+  // },
   {
+    type: "education",
     year: "2023 - Present",
 
     title: "Bachelor of Computer Applications (BCA)",
@@ -11,6 +19,7 @@ export const journey = [
   },
 
   {
+    type: "education",
     year: "2021-2023",
 
     title: "Higher Secondary Education",

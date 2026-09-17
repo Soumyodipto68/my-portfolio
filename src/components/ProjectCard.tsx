@@ -30,51 +30,37 @@ const ProjectCard = ({
         boxShadow: "0 20px 40px rgba(32, 178, 166, 0.15)",
         transition: { duration: 0.3 }
       }}
-      className="
-        border border-[#30363d]
-        rounded-3xl
-        overflow-hidden
-        bg-[#161b22]/40
-        backdrop-blur-xl
-        hover:border-[#3fb950]
-        transition-all duration-300
-      "
+      className="group overflow-hidden rounded-2xl border border-[#30363d] bg-[#0d1322]/80 transition-all duration-300 hover:border-[#a78bfa]"
     >
-      <div className="grid lg:grid-cols-2">
+      <div>
         {/* LEFT IMAGE */}
         <motion.div 
-          className="relative overflow-hidden border-r border-[#30363d] bg-[#0d1117] flex items-center justify-center"
+          className="relative flex items-center justify-center overflow-hidden border-b border-[#30363d] bg-[#0d1117]"
           whileHover={{ scale: 1.02 }}
         >
-          <div className="w-full aspect-video overflow-hidden">
+          <div className="aspect-video w-full overflow-hidden">
             <motion.img
               src={image}
               alt={title}
-              className="w-full h-full object-cover object-top"
+              className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.5 }}
             />
           </div>
 
           {/* OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117]/40 to-transparent pointer-events-none"/>
+          <div className="absolute inset-0 bg-linear-to-t from-[#0d1117]/40 to-transparent pointer-events-none"/>
         </motion.div>
 
         {/* RIGHT CONTENT */}
-        <div className="p-10 flex flex-col justify-center">
+        <div className="flex min-h-56 flex-col p-5">
           {/* Top Row */}
           <motion.div 
-            className="flex items-center justify-between mb-8"
+            className="mb-5 flex items-center justify-between"
             whileHover={{ scale: 1.02 }}
           >
             <motion.div
-              className="
-                w-14 h-14 rounded-xl
-                bg-[#0d1117] border border-[#30363d]
-                flex items-center justify-center
-                text-[#3fb950] text-xl font-bold
-                shadow-md
-              "
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#30363d] bg-[#070912] text-sm font-bold text-[#a78bfa]"
               whileHover={{ rotate: 5, scale: 1.1 }}
               transition={{ duration: 0.3 }}
             >
@@ -92,8 +78,7 @@ const ProjectCard = ({
                 }}
                 whileTap={{ scale: 0.9 }}
                 className="
-                  w-10 h-10 flex items-center justify-center
-                  rounded-full border border-[#30363d]
+                  flex h-8 w-8 items-center justify-center rounded-lg border border-[#30363d]
                   text-[#8b949e] hover:text-white
                   transition
                 "
@@ -110,8 +95,7 @@ const ProjectCard = ({
                 }}
                 whileTap={{ scale: 0.9 }}
                 className="
-                  w-10 h-10 flex items-center justify-center
-                  rounded-full border border-[#30363d]
+                  flex h-8 w-8 items-center justify-center rounded-lg border border-[#30363d]
                   text-[#8b949e] hover:text-white
                   transition
                 "
@@ -123,7 +107,7 @@ const ProjectCard = ({
 
           {/* Title */}
           <motion.h3 
-            className="text-3xl font-bold mb-6"
+            className="mb-3 text-xl font-bold"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.1 }}
@@ -133,7 +117,7 @@ const ProjectCard = ({
 
           {/* Description */}
           <motion.p 
-            className="text-[#8b949e] leading-8 mb-8"
+            className="mb-5 text-base leading-7 text-[#8b949e]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.15 }}
@@ -143,7 +127,7 @@ const ProjectCard = ({
 
           {/* Tech Stack */}
           <motion.div 
-            className="flex flex-wrap gap-3"
+            className="mt-auto flex flex-wrap gap-2"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -152,9 +136,7 @@ const ProjectCard = ({
               <motion.span
                 key={item}
                 className="
-                  px-4 py-2 rounded-lg
-                  bg-[#0d1117] border border-[#30363d]
-                  text-sm text-[#3fb950]
+                  rounded-lg border border-[#30363d] bg-[#151c2d] px-3 py-2 text-sm font-semibold text-[#cbd5e1]
                   transition
                 "
                 whileHover={{ 

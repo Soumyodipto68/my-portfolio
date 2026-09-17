@@ -1,5 +1,4 @@
 import Container from "../components/Container";
-import SectionHeading from "../components/SectionHeading";
 import ProjectCard from "../components/ProjectCard";
 import { motion } from "framer-motion";
 
@@ -10,10 +9,16 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24">
       <Container>
-        <SectionHeading title="Featured Projects" />
+        <div className="mb-10 flex items-end justify-between gap-6">
+          <div>
+            <p className="mb-2 font-mono text-xs uppercase tracking-[0.24em] text-[#a78bfa]">● my projects</p>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Some things <span className="text-[#a78bfa]">I've built</span></h2>
+          </div>
+          <a href="#projects" className="hidden items-center gap-2 rounded-xl border border-[#30363d] bg-[#151c2d] px-5 py-3 text-sm font-semibold text-[#f8fafc] transition hover:border-[#a78bfa] sm:inline-flex">View All Projects <span aria-hidden="true">→</span></a>
+        </div>
 
         <motion.div 
-          className="flex flex-col gap-8"
+          className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"

@@ -1,19 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --color-background: #0f1418;
-  --color-foreground: #f0f2f5;
-  --color-card: #141a1f;
-  --color-primary: #20b2a6;
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #1f2830;
-  --color-secondary-foreground: #20b2a6;
-  --color-muted: #252e37;
-  --color-muted-foreground: #7a8491;
-  --color-border: #242b32;
-  --radius: 0.75rem;
-  --color-highlight: #f5a623;
-  --color-surface: #1a2329;
+  --color-background: #02030a;
+  --color-foreground: #f8fafc;
+  --color-card: #0d1322;
+  --color-primary: #a78bfa;
+  --color-primary-foreground: #070912;
+  --color-secondary: #151c2d;
+  --color-secondary-foreground: #c4b5fd;
+  --color-muted: #1b2538;
+  --color-muted-foreground: #94a3b8;
+  --color-border: rgba(255, 255, 255, 0.14);
+  --color-border-strong: #e5e7eb;
+  --color-surface: #070912;
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --font-primary: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-size-base: 17px;
+  --line-height-base: 26px;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 6px;
+  --space-4: 8px;
+  --space-5: 10px;
+  --space-6: 12px;
+  --space-7: 16px;
+  --space-8: 20px;
+  --radius-xs: 12px;
+  --radius-sm: 16px;
+  --shadow-1: rgba(139, 92, 246, 0.18) 0 0 40px 0;
+  --shadow-2: rgba(139, 92, 246, 0.12) 0 0 25px 0;
+  --duration-instant: 200ms;
+  --duration-fast: 300ms;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -23,8 +45,51 @@ html {
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: 'Source Code Pro', monospace;
-  scroll-behavior: smooth;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  margin: 0;
+  min-width: 320px;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.35);
+  border: 3px solid var(--color-surface);
+  border-radius: 999px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.65);
+}
+
+button,
+a,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:where(button, a, input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(167, 139, 250, 0.3);
+  color: var(--color-foreground);
 }
 
 .polygon-shape {
@@ -36,6 +101,156 @@ body {
     25% 95%,
     0% 50%
   );
+}
+
+section {
+  scroll-margin-top: 96px;
+}
+
+main {
+  isolation: isolate;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    var(--color-background) !important;
+  background-size: 48px 48px !important;
+  animation: grid-drift 28s linear infinite;
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to { background-position: 48px 48px, 48px 48px, 0 0; }
+}
+
+@keyframes ambient-drift {
+  0%, 100% { transform: translate3d(-2%, 0, 0) scale(1); opacity: 0.55; }
+  50% { transform: translate3d(3%, 4%, 0) scale(1.08); opacity: 0.8; }
+}
+
+@keyframes scanline-drift {
+  from { transform: translateX(-15%); opacity: 0; }
+  20%, 70% { opacity: 0.5; }
+  to { transform: translateX(115%); opacity: 0; }
+}
+
+@keyframes floating-dot {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.25; }
+  50% { transform: translate3d(10px, -18px, 0); opacity: 0.85; }
+}
+
+.ambient-glow {
+  animation: ambient-drift 18s ease-in-out infinite;
+}
+
+.ambient-scanline {
+  animation: scanline-drift 12s ease-in-out infinite;
+}
+
+.floating-dot {
+  animation: floating-dot 7s ease-in-out infinite;
+  border-radius: 999px;
+  height: 4px;
+  position: absolute;
+  width: 4px;
+}
+
+.floating-dot--violet { background: #a78bfa; box-shadow: 0 0 12px rgba(167, 139, 250, 0.7); }
+.floating-dot--blue { background: #60a5fa; box-shadow: 0 0 12px rgba(96, 165, 250, 0.7); }
+
+/* Map the legacy utility classes to the shared semantic palette. */
+[class*="text-[#8b949e]"],
+[class*="text-[#94a3b8]"] { color: var(--color-muted-foreground) !important; }
+[class*="text-[#3fb950]"],
+[class*="text-emerald"] { color: var(--color-primary) !important; }
+[class*="text-[#e6edf3]"],
+[class*="text-white"] { color: var(--color-foreground) !important; }
+[class*="border-[#30363d]"] { border-color: var(--color-border) !important; }
+[class*="bg-[#161b22]"],
+[class*="bg-[#0d1117]"] { background-color: rgba(13, 19, 34, 0.86) !important; }
+[class*="rounded-3xl"], [class*="rounded-2xl"] { border-radius: var(--radius-sm) !important; }
+
+main a,
+main button {
+  transition: color var(--duration-instant) ease,
+    background-color var(--duration-instant) ease,
+    border-color var(--duration-instant) ease,
+    box-shadow var(--duration-fast) ease,
+    transform var(--duration-instant) ease;
+}
+
+main a:hover,
+main button:hover {
+  border-color: rgba(167, 139, 250, 0.7);
+}
+
+main button:disabled,
+main a[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+section [class*="border-[#30363d]"] {
+  background-color: rgba(13, 19, 34, 0.62) !important;
+  box-shadow: var(--shadow-2);
+}
+
+section [class*="border-[#30363d]"]:hover {
+  box-shadow: var(--shadow-1);
+}
+
+section img {
+  max-width: 100%;
+}
+
+section [class*="bg-[#0d1322"] {
+  position: relative;
+  overflow: hidden;
+}
+
+section [class*="bg-[#0d1322"]::before {
+  background: linear-gradient(110deg, rgba(167, 139, 250, 0.12), transparent 30%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+section p,
+section h1,
+section h2,
+section h3 {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  section {
+    scroll-margin-top: 80px;
+  }
+
+  section [class*="p-10"] {
+    padding: var(--space-8) !important;
+  }
+
+  h1 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  main,
+  .ambient-glow,
+  .ambient-scanline,
+  .floating-dot {
+    animation: none;
+  }
 }
 
 .pentagon-shape {

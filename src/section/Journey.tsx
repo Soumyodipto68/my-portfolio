@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 import Container from "../components/Container";
-import SectionHeading from "../components/SectionHeading";
 
 import { journey } from "../data/journey";
 import { staggerContainer, staggerItem } from "../utils/motion";
@@ -10,33 +9,30 @@ const Journey = () => {
   return (
     <section id="journey" className="py-24">
       <Container>
-        <SectionHeading title="Educational Journey" />
-
         <motion.div 
-          className="relative border-l border-[#30363d] ml-4 space-y-16"
+          className="space-y-14"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           
-          {journey.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={staggerItem}
-              whileHover={{ x: 10 }}
-              className="relative pl-10"
-            >
+          {["education"].map((type) => (
+            <div key={type}>
+              <p className="mb-8 flex items-center gap-2 font-mono text-sm font-semibold uppercase tracking-[0.22em] text-[#a78bfa]"><span>●</span>{type}</p>
+              <div className="relative ml-3 border-l border-[#30363d]">
+              {journey.filter((item) => item.type === type).map((item, index) => (
+                <motion.div key={index} variants={staggerItem} whileHover={{ x: 6 }} className="relative mb-10 pl-8 last:mb-0">
               
               {/* DOT */}
               <motion.div 
-                className="absolute -left-[11px] top-2 w-5 h-5 rounded-full bg-[#3fb950]"
+                className="absolute -left-3 top-1 h-5 w-5 rounded-full border-2 border-[#a78bfa] bg-[#070912]"
                 whileHover={{ scale: 1.3, boxShadow: "0 0 15px rgba(63, 185, 80, 0.5)" }}
               />
 
               {/* YEAR */}
               <motion.p 
-                className="text-[#3fb950] font-mono mb-3"
+                className="absolute right-0 top-0 rounded-xl border border-[#30363d] bg-[#151c2d] px-3 py-2 font-mono text-sm text-[#cbd5e1]"
                 whileHover={{ scale: 1.05 }}
               >
                 {item.year}
@@ -44,7 +40,7 @@ const Journey = () => {
 
               {/* TITLE */}
               <motion.h3 
-                className="text-2xl font-semibold mb-2"
+                className="mb-2 pr-36 text-lg font-semibold sm:text-xl"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
@@ -54,7 +50,7 @@ const Journey = () => {
 
               {/* PLACE */}
               <motion.p 
-                className="text-[#8b949e] mb-4"
+                className="mb-3 text-base text-[#94a3b8]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.15 }}
@@ -64,14 +60,17 @@ const Journey = () => {
 
               {/* DESCRIPTION */}
               <motion.p 
-                className="text-[#8b949e] leading-8 max-w-3xl"
+                className="max-w-3xl text-base leading-7 text-[#64748b]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
                 {item.description}
               </motion.p>
-            </motion.div>
+                </motion.div>
+              ))}
+              </div>
+            </div>
           ))}
         </motion.div>
       </Container>

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { VscGithub } from "react-icons/vsc";
 import { FaLinkedin } from "react-icons/fa";
 import { CiBrightnessUp } from "react-icons/ci";
@@ -10,7 +10,7 @@ const links = [
   { name: "About", id: "about" },
   { name: "Skills", id: "skills" },
   { name: "Projects", id: "projects" },
-  { name: "Education", id: "journey" },
+  { name: "Experience", id: "journey" },
   { name: "Contact", id: "contact" },
 ];
 
@@ -58,6 +58,21 @@ const Navbar = () => {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
+
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (!section) return;
@@ -67,20 +82,18 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-gradient-to-r from-[#0d1117]/80 to-[#161b22]/80 border-b border-[#30363d] shadow-lg">
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <motion.h1
-          onClick={() => scrollToSection("home")}
-          whileHover={{ scale: 1.1, color: "#58a6ff" }}
-          whileTap={{ scale: 0.95 }}
-          className="text-xl sm:text-2xl font-bold cursor-pointer text-[#3fb950] transition"
-        >
-          {"<Soumyodipto/>"} 
-        </motion.h1>
+    <header className="sticky top-0 z-50 border-b border-[#30363d]/70 bg-[#070912]/90 shadow-lg backdrop-blur-xl">
+      <nav aria-label="Primary navigation" className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-6">
+        <button onClick={() => scrollToSection("home")} aria-label="Go to home" className="flex items-center gap-3 text-left">
+          <span className="text-lg font-black italic text-[#a78bfa]">SP</span>
+          <span className="hidden border-l border-[#30363d] pl-3 sm:block">
+            <strong className="block text-sm leading-4 text-[#f8fafc]">Soumyodipto Pal</strong>
+            <span className="flex items-center gap-1.5 text-[11px] text-[#8b949e]"><i className="h-1.5 w-1.5 rounded-full bg-[#34d399]" /> Available for opportunities</span>
+          </span>
+        </button>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden items-center gap-7 md:flex">
           {links.map((link, index) => (
             <motion.li 
               key={link.id}
@@ -92,13 +105,14 @@ const Navbar = () => {
                 onClick={() => scrollToSection(link.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                aria-current={active === link.id ? "page" : undefined}
                 className={`relative cursor-pointer text-sm font-medium transition duration-300 hover:text-[#3fb950] ${
-                  active === link.id ? "text-white" : "text-[#8b949e]"
+                  active === link.id ? "text-[#f8fafc]" : "text-[#8b949e]"
                 }`}
               >
                 {link.name}
                 <motion.span
-                  className={`absolute left-0 -bottom-2 h-[2px] bg-[#3fb950] transition-all duration-300`}
+                  className="absolute -bottom-2 left-0 h-[2px] bg-[#a78bfa] transition-all duration-300"
                   initial={{ width: 0 }}
                   animate={{ width: active === link.id ? "100%" : 0 }}
                   transition={{ duration: 0.3 }}
@@ -119,7 +133,8 @@ const Navbar = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, color: "#3fb950" }}
               whileTap={{ scale: 0.9 }}
-              className="text-[#8b949e] transition"
+              aria-label="Open GitHub profile"
+              className="rounded-md p-2 text-[#8b949e] transition hover:text-white"
             >
               <VscGithub size={24} />
             </motion.a>
@@ -135,7 +150,8 @@ const Navbar = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, color: "#3fb950" }}
               whileTap={{ scale: 0.9 }}
-              className="text-[#8b949e] transition"
+              aria-label="Open LinkedIn profile"
+              className="rounded-md p-2 text-[#8b949e] transition hover:text-white"
             >
               <FaLinkedin size={24} />
             </motion.a>
@@ -150,7 +166,9 @@ const Navbar = () => {
           onClick={() =>setThemeOpen(!themeOpen)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="text-[#8b949e] hover:text-[#3fb950] transition p-1 cursor-pointer">
+          aria-label="Theme information"
+          aria-expanded={themeOpen}
+          className="cursor-pointer rounded-md p-2 text-[#8b949e] transition hover:text-[#3fb950]">
           <CiBrightnessUp size={24} />
         </motion.button>
         <AnimatePresence>
@@ -161,11 +179,16 @@ const Navbar = () => {
               exit={{ opacity: 0, y: -10, scale: 0.9 }}
               transition={{ duration: 0.2 }}
               className="absolute top-12 right-0 w-44 rounded-2xl border border-[#30363d] bg-[#161b22]/95 backdrop-blur-xl shadow-2xl p-2 z-50">
-              💡 Lights attract bugs, Good Developer only works in dark mode
+              Dark interface · optimized for focused work
             </motion.div>
           )}
         </AnimatePresence>
         </motion.li>
+          <li>
+            <a href="/SOUMYODIPTO_PAL_RESUME.pdf" download className="inline-flex items-center gap-2 rounded-lg border border-[#30363d] bg-[#151c2d] px-3 py-2 text-xs font-semibold text-[#f8fafc] hover:bg-[#1b2538]">
+              Download CV <Download size={14} />
+            </a>
+          </li>
         </ul>
 
         {/* Mobile Toggle */}
@@ -173,7 +196,9 @@ const Navbar = () => {
           onClick={() => setOpen(true)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="md:hidden text-white hover:text-[#3fb950] transition z-50"
+          aria-label="Open navigation menu"
+          aria-expanded={open}
+          className="z-50 rounded-md p-2 text-white transition hover:text-[#3fb950] md:hidden"
         >
           <Menu size={28} />
         </motion.button>
@@ -203,7 +228,10 @@ const Navbar = () => {
           damping: 30,
         }}
         ref={(el) => { sidebarRef.current = el; }}
-        className="md:hidden fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-[#161b22]/95 backdrop-blur-md
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
+        className="fixed right-0 top-0 z-50 flex h-full w-[85%] max-w-[320px] flex-col border-l border-[#30363d] bg-[#070912]/95 shadow-2xl backdrop-blur-md md:hidden
         border-l border-[#30363d]
         shadow-2xl z-50 flex flex-col"
       >
@@ -222,7 +250,8 @@ const Navbar = () => {
             onClick={() => setOpen(false)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="text-[#8b949e] hover:text-white"
+            aria-label="Close navigation menu"
+            className="rounded-md p-2 text-[#8b949e] hover:text-white"
           >
             <X size={24} />
           </motion.button>
@@ -242,6 +271,7 @@ const Navbar = () => {
               <motion.button
                 onClick={() => scrollToSection(link.id)}
                 whileTap={{ scale: 0.97 }}
+                aria-current={active === link.id ? "page" : undefined}
                 className={`w-full flex items-center justify-between
                 px-4 py-3 rounded-xl transition-all duration-300
                 ${
@@ -266,9 +296,7 @@ const Navbar = () => {
         shadow-2xl rounded-xl">
           <div className="p-4 rounded-xl bg-[#21262d] border border-[#30363d]">
             <p className="text-xs text-[#8b949e] leading-5">
-              💡 Lights attract bugs.
-              <br />
-              Good developers work in dark mode.
+              Focused interfaces make complex work easier to navigate.
             </p>
           </div>
         </div>
@@ -288,7 +316,8 @@ const Navbar = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.9 }}
-              className="text-[#8b949e] hover:text-[#3fb950] transition"
+              aria-label="Open GitHub profile"
+              className="rounded-md p-2 text-[#8b949e] transition hover:text-[#3fb950]"
             >
               <VscGithub size={24} />
             </motion.a>
@@ -299,7 +328,8 @@ const Navbar = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.9 }}
-              className="text-[#8b949e] hover:text-[#3fb950] transition"
+              aria-label="Open LinkedIn profile"
+              className="rounded-md p-2 text-[#8b949e] transition hover:text-[#3fb950]"
             >
               <FaLinkedin size={24} />
             </motion.a>

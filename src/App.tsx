@@ -7,12 +7,12 @@ import Contact from "./section/Contact";
 import Footer from "./components/Footer";
 import Journey from "./section/Journey";
 import BackgroundEffects from "./components/BackgroundEffects";
+import "./App.css";
 function App() {
   return (
-    <>
-    <main className="bg-[#0d1117] text-[#e6edf3] min-h-screen">
+    <main className="dashboard-shell bg-[#0d1117] text-[#e6edf3] min-h-screen">
       <BackgroundEffects />
-      <div className="relative z-10">
+      <div className="dashboard-content">
       <Navbar />
       <Hero />
       <About />
@@ -23,7 +23,6 @@ function App() {
       <Footer/>
       </div>
     </main>
-    </>
 
   );
 }
