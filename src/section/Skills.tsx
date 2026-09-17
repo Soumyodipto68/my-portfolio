@@ -23,7 +23,7 @@ const Skills = () => {
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true }}
-    className="rounded-2xl border border-[#30363d]/70 bg-transparent p-0 shadow-none transition sm:p-0"
+    className="rounded-2xl border border-[#30363d]/70 bg-[#070912] p-6 shadow-none transition sm:p-8 lg:p-10"
   >
       <Container>
         <div className="mb-12 text-center">

@@ -85,10 +85,10 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 border-b border-[#30363d]/70 bg-[#070912]/90 shadow-lg backdrop-blur-xl">
       <nav aria-label="Primary navigation" className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-6">
         <button onClick={() => scrollToSection("home")} aria-label="Go to home" className="flex items-center gap-3 text-left">
-          <span className="text-lg font-black italic text-[#a78bfa]">SP</span>
+          {/* <span className="text-lg font-black italic text-[#a78bfa]">SP</span> */}
           <span className="hidden border-l border-[#30363d] pl-3 sm:block">
-            <strong className="block text-sm leading-4 text-[#f8fafc]">Soumyodipto Pal</strong>
-            <span className="flex items-center gap-1.5 text-[11px] text-[#8b949e]"><i className="h-1.5 w-1.5 rounded-full bg-[#34d399]" /> Available for opportunities</span>
+            <strong className="block text-2xl leading-4 text-[#f8fafc]"> {"<Soumyodipto/>"} </strong>
+            {/* <span className="flex items-center gap-1.5 text-[11px] text-[#8b949e]"><i className="h-1.5 w-1.5 rounded-full bg-[#34d399]" /> Available for opportunities</span> */}
           </span>
         </button>
 
@@ -145,7 +145,7 @@ const Navbar = () => {
             transition={{ delay: 0.7 }}
           >
             <motion.a
-              href="https://www.linkedin.com/in/soumyodipto/"
+              href="https://www.linkedin.com/in/soumyodipto-pal-421a2331b/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, color: "#3fb950" }}

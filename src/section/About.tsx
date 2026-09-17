@@ -45,14 +45,14 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              I'm a 3rd year BCA student at Techno India University, passionate about coding and building real-world solutions. I love turning ideas into products.
+              I'm a 4th year BCA student at Techno India University, passionate about coding and building real-world solutions. I love turning ideas into products.
             </motion.p>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               <div className="flex gap-3"><MapPin className="text-[#a78bfa]" size={20} /><span><b className="block text-sm">Location</b><small className="text-[#8b949e]">Kolkata, India</small></span></div>
-              <div className="flex gap-3"><Star className="text-[#a78bfa]" size={20} /><span><b className="block text-sm">CGPA</b><small className="text-[#8b949e]">9.02 / 10</small></span></div>
+              <div className="flex gap-3"><Star className="text-[#a78bfa]" size={20} /><span><b className="block text-sm">CGPA</b><small className="text-[#8b949e]">9.3 / 10</small></span></div>
               <div className="flex gap-3"><GraduationCap className="text-[#a78bfa]" size={20} /><span><b className="block text-sm">Education</b><small className="text-[#8b949e]">BCA, Techno India University</small></span></div>
-              <div className="flex gap-3"><Mail className="text-[#a78bfa]" size={20} /><span><b className="block text-sm">Email</b><small className="text-[#8b949e]">soumyodipto.pal@gmail.com</small></span></div>
+              <div className="flex gap-3"><Mail className="text-[#a78bfa]" size={20} /><span><b className="block text-sm">Email</b><small className="text-[#8b949e]">soumyodiptopal77@gmail.com</small></span></div>
             </div>
           </motion.div>
 
@@ -86,7 +86,7 @@ const About = () => {
             >
               <Rocket className="mb-3 text-[#f59e0b]" /><strong className="text-3xl">15+</strong><span className="text-sm text-[#8b949e]">Features Implemented</span>
             </motion.div>
-            <div className="flex min-h-36 flex-col items-center justify-center rounded-xl border border-[#30363d] bg-[#070912]/65 p-4 text-center"><strong className="text-3xl text-[#22d3ee]">9.02</strong><span className="text-sm text-[#8b949e]">Current CGPA</span></div>
+            <div className="flex min-h-36 flex-col items-center justify-center rounded-xl border border-[#30363d] bg-[#070912]/65 p-4 text-center"><strong className="text-3xl text-[#22d3ee]">9.3</strong><span className="text-sm text-[#8b949e]">Current CGPA</span></div>
             <div className="flex min-h-36 flex-col items-center justify-center rounded-xl border border-[#30363d] bg-[#070912]/65 p-4 text-center"><strong className="text-3xl text-[#a78bfa]">∞</strong><span className="text-sm text-[#8b949e]">Learning Everyday</span></div>
           </motion.div>
         </div>

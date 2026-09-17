@@ -79,8 +79,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a
-              href="/SOUMYODIPTO_PAL_RESUME.pdf"
-              download
+              href="#contact"
               whileHover={{
                 scale: 1.05,
                 borderColor: "#3fb950",
@@ -96,7 +95,7 @@ const Hero = () => {
           <div className="mt-8 flex items-center gap-3 text-sm text-[#8b949e]">
             <span>Find me on</span>
             <a aria-label="GitHub profile" href="https://github.com/soumyodipto68" target="_blank" rel="noreferrer" className="rounded-lg border border-[#30363d] p-2 hover:text-[#a78bfa]"><VscGithub size={17} /></a>
-            <a aria-label="LinkedIn profile" href="https://www.linkedin.com/in/soumyodipto/" target="_blank" rel="noreferrer" className="rounded-lg border border-[#30363d] p-2 hover:text-[#a78bfa]"><FaLinkedin size={17} /></a>
+            <a aria-label="LinkedIn profile" href="https://www.linkedin.com/in/soumyodipto-pal-421a2331b/" target="_blank" rel="noreferrer" className="rounded-lg border border-[#30363d] p-2 hover:text-[#a78bfa]"><FaLinkedin size={17} /></a>
             <a aria-label="Email Soumyodipto" href="mailto:soumyodiptopal77@gmail.com" className="rounded-lg border border-[#30363d] p-2 hover:text-[#a78bfa]"><Mail size={17} /></a>
           </div>
         </motion.div>

@@ -18,7 +18,7 @@ const Journey = () => {
         >
           
           {["education"].map((type) => (
-            <div key={type}>
+              <div key={type} className="rounded-2xl border border-[#30363d]/70 bg-[#070912] p-6 sm:p-8 lg:p-10">
               <p className="mb-8 flex items-center gap-2 font-mono text-sm font-semibold uppercase tracking-[0.22em] text-[#a78bfa]"><span>●</span>{type}</p>
               <div className="relative ml-3 border-l border-[#30363d]">
               {journey.filter((item) => item.type === type).map((item, index) => (

@@ -11,8 +11,7 @@ const Footer = () => {
         transition={{ duration: 0.5 }}
         whileHover={{ color: "#3fb950" }}
       >
-        © 2026 Soumyodipto Pal. Built with React,
-        TypeScript & Tailwind CSS.
+        &copy; {new Date().getFullYear()} © 2024 Soumyodipto Pal. All rights reserved.
       </motion.div>
     </footer>
   );
