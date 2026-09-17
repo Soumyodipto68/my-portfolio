@@ -11,7 +11,7 @@ const Footer = () => {
         transition={{ duration: 0.5 }}
         whileHover={{ color: "#3fb950" }}
       >
-        &copy; {new Date().getFullYear()} © 2024 Soumyodipto Pal. All rights reserved.
+        &copy; {new Date().getFullYear()} Soumyodipto Pal. All rights reserved.
       </motion.div>
     </footer>
   );
